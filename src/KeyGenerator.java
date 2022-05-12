@@ -1,18 +1,15 @@
-import java.util.ArrayList;
 
 public class KeyGenerator {
     
-    public static int vetorDigitos[] = {105,48,48,48,48,48,48};
+    private static int vetorDigitos[] = {105,48,48,48,48,48,48};
+
+    private static char[] simbolosASCII = {'0','0','0','0','0','0','0'};
 
     public static boolean sinal = false;
 
-    public static ArrayList<char[]> lista = new ArrayList<char[]>();
-
-    
-
     public void IncrementoTratado(int indice)  {
 
-        if(vetorDigitos[1] >= 122 && vetorDigitos[2] >= 122) {
+        if(vetorDigitos[1] >= 122) {
 
             sinal = true;
 
@@ -55,23 +52,29 @@ public class KeyGenerator {
         
     }
 
-    public char[] percorreVetor(){    
-        
+    public char[] converteASCII(){
+
         char simbolos[] = new char[vetorDigitos.length];
-
-
-        if( sinal == false)  {
 
 
             for(int i = 0; i < simbolos.length;i++){
 
                 simbolos[i] = (char)vetorDigitos[i];
-
                 
             }
 
-            //lista.add(simbolos); 
-            //System.out.println(lista.get(lista.size()-1));          
+
+    return simbolos;
+
+}
+    
+    public  void percorreVetor(){    
+        
+
+        if( sinal == false)  {
+    
+        simbolosASCII = converteASCII();
+            
         
             IncrementoTratado(6);
             IncrementoTratado(5);
@@ -79,19 +82,17 @@ public class KeyGenerator {
             IncrementoTratado(3);
             IncrementoTratado(2);
             IncrementoTratado(1);
-           // IncrementoTratado(0);
+           // IncrementoTratado(0);  = 'i'
 
-           
-            return simbolos;
-
-            
         } 
         
-        return null;
-
-
     }
 
+    public  char[] getASCII(){
+        
+        return simbolosASCII;
+        
+    }
 }
 
 

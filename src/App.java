@@ -19,23 +19,20 @@ public class App {
         String path10 = "C:\\Dev\\arquivo10.zip";
         String path11 = "C:\\Dev\\arquivo11.zip";
 
-        KeyGenerator key = new KeyGenerator();
 
-        Object lock = new Object();
-
-        ThreadWork t0 = new ThreadWork(key, path0, lock);        
-        ThreadWork t1 = new ThreadWork(key, path1, lock);
-        ThreadWork t2 = new ThreadWork(key, path2, lock);
-        ThreadWork t3 = new ThreadWork(key, path3, lock);
-        ThreadWork t4 = new ThreadWork(key, path4, lock);
-        ThreadWork t5 = new ThreadWork(key, path5, lock);
-        ThreadWork t6 = new ThreadWork(key, path6, lock);
-        ThreadWork t7 = new ThreadWork(key, path7, lock);
-        ThreadWork t8 = new ThreadWork(key, path8, lock);
-        ThreadWork t9 = new ThreadWork(key, path9, lock);
-        ThreadWork t10 = new ThreadWork(key, path10, lock);
-        ThreadWork t11 = new ThreadWork(key, path11, lock);
-    
+        ThreadWork t0 = new ThreadWork(path0);
+        ThreadWork t1 = new ThreadWork(path1);
+        ThreadWork t2 = new ThreadWork(path2);
+        ThreadWork t3 = new ThreadWork(path3);
+        ThreadWork t4 = new ThreadWork(path4);
+        ThreadWork t5 = new ThreadWork(path5);
+        ThreadWork t6 = new ThreadWork(path6);
+        ThreadWork t7 = new ThreadWork(path7);
+        ThreadWork t8 = new ThreadWork(path8);
+        ThreadWork t9 = new ThreadWork(path9);
+        ThreadWork t10 = new ThreadWork(path10);
+        ThreadWork t11 = new ThreadWork(path11);
+        
         t0.start();
         t1.start();
         t2.start();
