@@ -16,7 +16,9 @@ public class ThreadWork extends Thread {
 
     }  
 
-    public void run() {            
+    public void run() {   
+        
+        
         
                           
         while(Key.sinal == false) {     
@@ -34,7 +36,7 @@ public class ThreadWork extends Thread {
 
                     synchronized(lock){
 
-                       Key.percorreVetor();
+                       Key.allRandom();
 
                     } 
                                     

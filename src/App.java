@@ -19,7 +19,7 @@ public class App {
         String path10 = "C:\\Dev\\arquivo10.zip";
         String path11 = "C:\\Dev\\arquivo11.zip";
 
-
+       
         ThreadWork t0 = new ThreadWork(path0);
         ThreadWork t1 = new ThreadWork(path1);
         ThreadWork t2 = new ThreadWork(path2);
