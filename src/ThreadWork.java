@@ -8,39 +8,31 @@ public class ThreadWork extends Thread {
 
     KeyGenerator Key = new KeyGenerator();
     String Path = "";
-    Object lock = new Object();
-    
+    ZipFile zip_file;
 
     ThreadWork( String path) {
         this.Path = path;
-
+        this.zip_file = new ZipFile(this.Path);
     }  
 
-    public void run() {   
-        
-        
-        
-                          
-        while(Key.sinal == false) {     
+    public void run() {          
+        while(Key.sinal == false) {
+            try {   
+                    // System.out.println(Key.incrementa());
+                    this.zip_file.setPassword(Key.incrementa());
+                    this.zip_file.extractAll("C:\\Dev\\");
+                    System.out.print("Sucesso essa é a senha: " + Key.password);
+                    Key.sinal = true;  
+                }   
             
-                                        
-                try {   
-                        System.out.println(Key.getASCII());
-                        new ZipFile(Path, Key.getASCII()).extractAll("C:\\Dev\\");
-                        System.out.print("Sucesso essa é a senha: " );
-                        System.out.println(Key.getASCII());
-                        Key.sinal = true;  
-                    }   
-                
-                catch (Exception e) {
+            catch (Exception e) {
+                // System.out.println(e);
+                // if (e.getMessage().equals("Index 62 out of bounds for length 62")){
+                //     e.printStackTrace();
+                // }
 
-                    synchronized(lock){
-
-                       Key.allRandom();
-
-                    } 
-                                    
-                }
+                // 
+            }
         }
     
     }
